@@ -1,0 +1,133 @@
+Day #1
+- Vue like view
+- Ewan You created Vue
+- Vue like Angular (Framework) and React (Lib)
+- Vue is a SPA Framework
+- Install : npm i -g @vue/cli
+- Create : vue create <project-name>
+- yarn serve
+- Project File Structure 
+  + Root Project
+    + public  (index.html and static files)
+    + src (view, components, assets, routers, store, App.js)
+    + App.js (Root component) loaded by main.js
+- Vue Snippet and Vetur    
+- <vue>
+- Git pull vs git reset --hard
+- keywords [component, template, script, style]
+- keyworks [data, mount, methods]
+- keywords [@click, v-if, v-show, v-model]
+- Images kept in Assets
+- Vue ui
+- Plugins vs Lib
+- Material Design framwork (Vuetify)
+- Vuetify VSCode Extension [vText, vButton, vCard]
+- Set Material Icon
+- Define routes in /router/index.js
+- const routes = 
+    {path: "login", name: "login", component: Login}
+]
+ 
+Day #2
+- Login and Register
+- Page Navigation 
+  + push("/register")
+  + go(-1)
+- Review Password Field
+  + Append Icon (show/hide password)
+  + true/false ? then : else
+- Axios Promise-Based HttpClient
+- bodyParser (app.use(bodyParser.urlencoded({extended: false}))) / app.use(bodyParser.json())
+  + UrlEncoded
+  + json
+- Backend NodeJS
+  + node vs nodemon
+  + postman mockup http request
+  + Lib (npm i express body-parser fs-extra formidable cors)  
+  + get, post, put, delete
+  + app.use(express.static)
+  + app.use(cors()) - cross origin resource sharing
+- Separate APIs  
+  + api_authen, api_product, api_transaction
+  + const router = express.Router()
+  + module.export = router  
+- Asychonous Programming
+  - Hell Callback, Promise, Async/Await
+- SQLDB vs NoSQLDB  
+- MongoDB and Mongoose
+- mongod --dbpath <db folder path>
+- Test DB Connection with Robo3T
+- Users.create == insert into
+
+Day #3
+- Secure Route (meta)
+- AppBar (Header) and Navigation (Menu)
+- JWT (Json Web Token) [private and public key]
+- NodeJS Interceptor  
+  router.get("/test", interceptor.verify, (req, res) => {
+    res.json(["Angular", "VueJS", "Andrid", "React"]);
+  });
+- Axios (Http Interceptor - add baseUrl and bundle TOKEN)
+- .env.development and .evn.production
+- Computed vs Method
+- watch in Menu.js
+   watch:{
+     $route(to, from) {
+       this.selectedMenu = this.menus.findIndex(menu=> menu[2] == to.path)
+      }
+    },
+- Props
+
+
+Day #4
+- VueX https://www.youtube.com/watch?v=a_k_2Ud7z7w&t=1s
+- VueX [state, action, mutation, getter, dispatch, commit, $store.state,$store.dispatch()]
+- Upload with Multiple Part or FormData
+  + formidable, fs-extra
+- Stock Create, Edit, Delete 
+- Dialog [v-model show/hide]
+- 
+
+
+Day #5
+- Shop [v-row, r-col, margin (mx, mv, pt...)]
+- Dialog (v-slot:avatator)
+- Apply data in jwt (payload)
+- ChartJS [vue-chartjs and chartjs]
+- Report call [LineChart, BarChart]
+- maintainAspectRatio: false
+- NodeJS Transaction: 
+  + aggregate [$match, $lookup, $addFields, $unwind, $project]
+- Transaction Page (DataTable)  
+- Form Validation [:rules, ref="form", this.$refs.form.validate()]
+- Deployment
+  - JIT (yarn serve) vs AOT (yarn build)
+  - yarn build (dist)
+  - sudo npm i -g serve and serve dist -p 80
+  - Install ngnix 
+  - Fix refresh probelm with fallback (nginx.conf)
+  - Sub-folder vue.config
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/demo/'
+    : '/'
+  - pm2
+  npx pm2 start server.js == npx nodemon server.js
+  npx pm2 start server.js
+  npx pm2 status
+  npx pm2 stop server
+  npx pm2 stop 0
+  npx pm2 start server
+  npx pm2 (start/stop/restart) all
+  npx pm2 log 
+  npx pm2 log server/0
+  npx pm2 start server/0 --watch
+  npx pm2 delete server/0
+  pm2 startup // หมายถึงเมื่อมีการ start server ให้ program เรา start ด้วย
+  pm2 save // หมายถึงให้ pm2 เก็บข้อมูลทั้งหมดเพื่อใช้ตอน start    
+
+https://www.npmjs.com/package/vue-google-heatmap
+https://observablehq.com/@tonmcg/vue-svg-circle
+
+#Vue Clips
+https://www.youtube.com/watch?v=ZnlCLtrYSsQ&list=PLjPfp4Ph3gBry3sJDNrbqor5ikjwGDJ_7
+https://www.youtube.com/watch?v=ttd4zOgCJdc&t=44s

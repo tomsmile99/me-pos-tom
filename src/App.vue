@@ -1,32 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div>
+    <v-app>
+      <span class="bg_image"></span>
+      <Header v-if="$store.getters['isLogin']" />
+      <Menu v-if="$store.getters['isLogin']" />
+      <Content />
+    </v-app>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+// กรณีใช้ TypeScript จะต้องติดตั้ง vue-property-decorator
+import { Vue, Component } from "vue-property-decorator";
+import Header from "./components/core/Header.vue";
+import Menu from "./components/core/Menu.vue";
+import Content from "./components/core/Content.vue";
 
-#nav {
-  padding: 30px;
-}
+@Component({ components: { Header, Menu, Content } })
+export default class App extends Vue {
+  private isLogin = true;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  mounted() {
+    this.$store.dispatch({ type: "restoreLogin" });
+  }
 }
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+.bg_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("assets/background.jpg") no-repeat center center;
+  background-size: cover;
+  transform: scale(1.1);
 }
 </style>

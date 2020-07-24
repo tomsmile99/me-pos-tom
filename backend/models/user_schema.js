@@ -1,0 +1,22 @@
+/*
+var mongoose = require('mongoose');
+var schema = mongoose.Schema({
+    username: String,
+    password: String,
+    level: {type: String, default: 'normal'},
+    created: {type: Date, default: Date.now}
+})
+schema.index({ username: 1}, { unique: true });
+module.exports = mongoose.model('users', schema)
+*/
+
+const mongoose = require("mongoose");
+const schema = mongoose.Schema({
+  username: String,
+  password: String,
+  level: { type: String, default: "normal" },
+  created: { type: Date, default: Date.new },
+});
+
+schema.index({ username: 1 }, { unique: true });
+module.exports = mongoose.model("users", schema);

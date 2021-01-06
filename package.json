@@ -10,7 +10,7 @@
   "dependencies": {
     "@types/chart.js": "^2.9.23",
     "@types/vue-moment": "^4.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
     "material-design-icons-iconfont": "^5.0.1",
